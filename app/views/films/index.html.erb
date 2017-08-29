@@ -1,1 +1,6 @@
-<h1>FUCK YEAH!</h1>
+<h1>All Movies</h1>
+
+<ul>
+<% @films.each do |film| %>
+    <li><%= link_to film.title, film %></li>
+<% end %>
