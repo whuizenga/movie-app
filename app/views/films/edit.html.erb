@@ -28,3 +28,7 @@
     <%= form.submit %>
 </div>
 <% end %>
+
+<%= form_for @film, method: :delete do |f| %>
+<%=    f.submit "delete", class: "delete" %>
+<% end %>

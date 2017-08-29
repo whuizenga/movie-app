@@ -22,13 +22,19 @@ class FilmsController < ApplicationController
         @film = Film.find params[:id]
         @film.update(film_params)
 
-        redirect_to film_show_path(@film.id)
+        redirect_to film_path(@film.id)
     end
 
     def show
         @film = Film.find params[:id]
     end
 
+    def destroy
+        @film = Film.find(params[:id]) 
+        @film.destroy
+
+        redirect_to root_path
+    end
     private
     def film_params
         params.require(:film).permit(:title, :genre, :year, :image, :synopsis)
