@@ -1,7 +1,8 @@
 <h1>All Movies</h1>
-
+<%= link_to "add film", new_film_path %>
 <ul>
 <% @films.each do |film| %>
-    <li><%= link_to film.title, film %></li>
+    <li><%= link_to film.title, film %> </li>
+
 <% end %>
 </ul>

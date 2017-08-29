@@ -19,6 +19,10 @@ class FilmsController < ApplicationController
     end
 
     def update
+        @film = Film.find params[:id]
+        @film.update(film_params)
+
+        redirect_to film_show_path(@film.id)
     end
 
     def show
